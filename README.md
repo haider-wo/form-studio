@@ -18,23 +18,6 @@ A bold, experimental single-page website for a graphic design studio, built with
 | **Contact** | Functional form with validation |
 | **404** | Catch-all error page |
 
-## Design Tokens
-
-| Token | Value |
-|-------|-------|
-| `--color-primary` | `#CCFF00` (Acid Lime) |
-| `--color-text-primary` | `#111111` |
-| `--color-text-secondary` | `#666666` |
-| `--color-background` | `#FFFFFF` |
-| `--color-surface` | `#F5F5F5` |
-| `--color-border` | `#E0E0E0` |
-| `--font-family` | `Inter, Helvetica Neue, Arial, sans-serif` |
-| `--text-display` | `clamp(80px, 12vw, 140px)` |
-| `--text-h1` | `clamp(36px, 5vw, 56px)` |
-| `--text-h2` | `clamp(28px, 3.5vw, 42px)` |
-| `--border-radius` | `4px` |
-| `--border-width` | `1px` |
-
 ## Animations
 
 - **Fade-ins** — IntersectionObserver scroll reveals
