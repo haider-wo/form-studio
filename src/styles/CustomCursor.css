@@ -1,0 +1,69 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  mix-blend-mode: difference;
+  opacity: 0;
+  /* Start off-screen so no flash at 0,0 */
+  transform: translate(-100px, -100px) translate(-50%, -50%);
+}
+
+.custom-cursor--visible {
+  opacity: 1;
+}
+
+.custom-cursor--hover {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.custom-cursor--click {
+  /* transform: scale(0.9) !important; */
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: calc(var(--z-cursor) + 1);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  /* Start off-screen */
+  transform: translate(-100px, -100px) translate(-50%, -50%);
+}
+
+.custom-cursor-dot--visible {
+  opacity: 1;
+}
+
+.custom-cursor-dot--hover {
+  opacity: 0;
+}
+
+/* Hide on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none !important;
+  }
+  body {
+    cursor: auto !important;
+  }
+  a, button {
+    cursor: pointer !important;
+  }
+}

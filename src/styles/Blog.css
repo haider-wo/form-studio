@@ -1,0 +1,120 @@
+.blog {
+  padding: var(--section-padding-y) 0;
+  background-color: var(--color-surface-alt);
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+
+.blog__card {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow var(--transition-default);
+}
+
+.blog__card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blog__card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.blog__image-wrapper {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
+
+.blog__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog__card:hover .blog__image {
+  transform: scale(1.05);
+}
+
+.blog__content {
+  padding: var(--space-lg);
+}
+
+.blog__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.blog__date {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+.blog__title {
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-subheading);
+  margin-bottom: var(--space-sm);
+}
+
+.blog__excerpt {
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-body);
+  margin-bottom: var(--space-md);
+}
+
+.blog__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  border-top: var(--border-width) solid var(--color-border-light);
+}
+
+.blog__read-time {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+.blog__read-more {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-body-small);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.blog__read-more:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog__grid {
+    grid-template-columns: 1fr;
+  }
+}
