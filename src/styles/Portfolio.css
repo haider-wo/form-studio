@@ -209,7 +209,7 @@
 
 .lightbox__close {
   position: absolute;
-  top: var(--space-xl);
+  top: 68px;
   right: var(--space-xl);
   width: 48px;
   height: 48px;
